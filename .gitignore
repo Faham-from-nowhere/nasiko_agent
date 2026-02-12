@@ -1,0 +1,39 @@
+# --- Security (CRITICAL) ---
+.env
+.env.local
+api_keys.txt
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Distribution / Builds ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+.vscode/
+.idea/
+*.swp
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+agents/*.log
+
+# --- Test Data (Don't commit the folders you tested on) ---
+golden_dataset/
+target_project/
+test_runs/
