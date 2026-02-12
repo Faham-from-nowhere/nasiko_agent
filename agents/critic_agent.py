@@ -22,9 +22,9 @@ class CriticAgent:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(model_name)
 
-    # ===============================
+   
     # 1️⃣ RULE-BASED VALIDATION
-    # ===============================
+   
     def rule_based_check(self, docstring: str, metadata: dict) -> tuple[bool, str]:
         if not docstring.strip():
             return False, "Docstring is empty."
@@ -48,9 +48,9 @@ class CriticAgent:
 
         return True, "Rule-based validation passed."
 
-    # ===============================
+   
     # 2️⃣ AI VALIDATION
-    # ===============================
+  
     def ai_critique(self, docstring: str, metadata: dict) -> tuple[bool, str]:
         prompt = f"""
 You are a strict senior software reviewer.
@@ -98,9 +98,9 @@ Respond ONLY in valid JSON:
         except Exception as e:
             return False, f"AI validation error: {str(e)}"
 
-    # ===============================
+ 
     # 3️⃣ FULL VALIDATION PIPELINE
-    # ===============================
+ 
     def critique(self, docstring: str, metadata: dict) -> tuple[bool, str]:
         # Step 1: Rule-based validation
         rule_pass, rule_msg = self.rule_based_check(docstring, metadata)
