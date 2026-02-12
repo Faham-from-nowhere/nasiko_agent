@@ -23,9 +23,7 @@ class DocstringInjector:
 
         print(f"✅ Injected into {os.path.basename(file_path)} ({metadata['name']})")
 
-    # ===============================
-    # PYTHON INJECTION (CORRECT)
-    # ===============================
+    
     def _inject_python(self, lines, target_line_idx, docstring):
         def_line = lines[target_line_idx]
         indentation = len(def_line) - len(def_line.lstrip())
@@ -49,9 +47,9 @@ class DocstringInjector:
 
         lines.insert(target_line_idx + 1, formatted_doc)
 
-    # ===============================
+   
     # JS / TS INJECTION
-    # ===============================
+    
     def _inject_js(self, lines, target_line_idx, docstring):
         indentation = len(lines[target_line_idx]) - len(lines[target_line_idx].lstrip())
         indent_str = " " * indentation
